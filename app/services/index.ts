@@ -1,4 +1,4 @@
-import {AxiosRequestHeaders} from 'axios';
+import {RawAxiosRequestHeaders} from 'axios';
 import apiClient from './api-client';
 const BASE_URL = 'http://10.0.2.2:4001';
 
@@ -17,7 +17,7 @@ const post = async (
   route: string,
   {body, type = '', user = {}}: {body: any; type: string; user: any},
 ) => {
-  let headers: AxiosRequestHeaders = {Accept: 'application/json'};
+  let headers: RawAxiosRequestHeaders = {Accept: 'application/json'};
   if (user.token) {
     headers.Authorization = `Bearer ${user.token}`;
   }
